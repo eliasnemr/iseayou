@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      contributions
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,37 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large" class="page-title">contributions</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div id="container" [hidden]="pulledContributions.length > 0">
+  <p>Your contributions will appear here...</p>
+  </div>
+
+  <div id="container">
+  <ion-list  
+  lines="full"
+  id="contribution-list" 
+  *ngFor="let p of pulledContributions"  
+  [hidden]="pulledContributions.length < 1">
+  <ion-item>
+  <ion-label slot="start">
+  <h3 id="date">{{p.date}}</h3>
+  <p id="time"> {{p.time}} </p>
+   Anonymous posted
+  </ion-label>
+  
+  <ion-label>
+  <h2>
+  {{ p.location }}
+  </h2>
+  <p>Long: {{p.longitude}}</p>
+  <p>Lat: {{p.latitude}}</p>
+  
+  </ion-label>
+
+  </ion-item>
+  </ion-list>
+  </div>
 </ion-content>

@@ -1,5 +1,8 @@
 {
   "name": "iseayou",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }
